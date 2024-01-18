@@ -1,21 +1,3 @@
-ClassicEditor
-	.create( document.querySelector( '.editor_des' ), {
-		// Editor configuration.
-	} )
-	.then( editor => {
-		window.editor = editor;
-	} )
-	.catch( handleSampleError );
-
-ClassicEditor
-	.create( document.querySelector( '.editor_content' ), {
-		// Editor configuration.
-	} )
-	.then( editor => {
-		window.editor = editor;
-	} )
-	.catch( handleSampleError );
-
 function handleSampleError( error ) {
 	const issueUrl = 'https://github.com/ckeditor/ckeditor5/issues';
 

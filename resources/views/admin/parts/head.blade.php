@@ -6,3 +6,5 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{{asset('backend/asset/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('backend/asset/css/product_add.css')}}">
+    <link rel="stylesheet" href="{{asset('backend/asset/ckeditor5_col/styles.css')}}">
