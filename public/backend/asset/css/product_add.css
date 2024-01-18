@@ -1,0 +1,120 @@
+:root {
+    --main-bg-color: #414e66;
+    --sub-bg-color: #f2f7fb;
+    --top-height: 70px;
+    --main-transition: all 0.3s ease;
+    --color-hover-text: rgb(42, 106, 165);
+    --main-border-radius: 8px;
+}
+
+.admin-content-main-content {
+    background-color: white;
+}
+
+/* product-add */
+.admin-content-main-content-product-add {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 12px;
+    column-gap: 20px;
+}
+
+.admin-content-main-content-left input {
+    height: 40px;
+    border: none;
+    background-color: var(--sub-bg-color);
+    margin-bottom: 20px;
+    outline: none;
+    border-radius: var(--main-border-radius);
+    padding-left: 6px;
+}
+
+.admin-content-main-content-two-input {
+    display: flex;
+    justify-content: space-between;  
+}
+
+.admin-content-main-content-two-input input {
+    width: 46%;
+}
+
+.admin-content-main-content-left textarea {
+    height: 200px;
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 6px;
+    border: none;
+}
+
+.admin-content-main-content-right-image input {
+    display: none;
+}
+
+.admin-content-main-content-right-images input {
+    display: none;
+}
+
+.admin-content-main-content-right label {
+    padding: 6px 12px;
+    background-color: black;
+    color: whitesmoke;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.image-show, .images-show {
+    min-height: 100px;
+}
+
+/* ckeditor */
+.ck.ck-editor {
+    margin-bottom: 30px;
+}
+
+.admin-content-main-content-left {
+    max-height: 890px;
+    overflow: scroll;
+}
+
+/* product-list */
+.admin-content-main-content-product-list table {
+    width: 100%;
+    padding: 12px 0;
+    border-collapse: collapse;
+}
+
+.admin-content-main-content-product-list table th {
+    background-color: black;
+    color: white;
+    padding: 6px 0;
+}
+
+.admin-content-main-content-product-list table,th,td {
+    text-align: center;
+}
+
+/* order-list */
+.admin-content-main-content-order-list table {
+    width: 100%;
+    padding: 12px 0;
+    border-collapse: collapse;
+}
+
+.admin-content-main-content-order-list table a {
+    display: inline-block;
+}
+
+.admin-content-main-content-order-list table th {
+    background-color: black;
+    color: white;
+    padding: 6px 0;
+}
+
+.admin-content-main-content-order-list table,th,td {
+    text-align: center;
+}
+
+.admin-content-main-content-order-list table td {
+    padding: 6px 0;
+}

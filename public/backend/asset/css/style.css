@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --main-bg-color: #414e66;
+    --sub-bg-color: #f2f7fb;
+    --top-height: 70px;
+    --main-transition: all 0.3s ease;
+    --color-hover-text: rgb(42, 106, 165);
+    --main-border-radius: 8px;
+    --main-font-family: "Open Sans", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font-family);
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+ul {
+    list-style: none;
+}
+
+.row-grid {
+    display: grid;
+    justify-content: space-between;
+}
+
+.flex-box{
+    display: flex;
+}
+
+.main-btn {
+    padding: 10px 12px;
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--main-border-radius);
+}
+
+.main-btn:hover {
+    background-color: #7cbbee;
+    color: black;
+}
+
+.delete-class, .nonconfirm-order {
+    padding: 4px;
+    background-color: red;
+    color: white;
+    border-radius: var(--main-border-radius);
+}
+
+.edit-class, .confirm-order {
+    padding: 4px;
+    background-color: green;
+    color: white;
+    border-radius: var(--main-border-radius);
+}
+
+/* main-admin */
+.admin .row-grid {
+    grid-template-columns: 20% 80%;
+}
+
+/* sidebar */
+.admin-sidebar {
+    height: 100vh;
+    background-color: var(--main-bg-color);
+}
+
+.admin-sidebar-top  {
+    text-align: center;
+    height: var(--top-height);
+    border-bottom: 1px solid gray;
+}
+
+.admin-sidebar-top img{
+    width: var(--top-height);
+}
+
+.admin-sidebar-content > ul > li > a  {
+    width: 100%;
+    display: block;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.admin-sidebar-content > ul > li > a i:last-child {
+    margin-left: auto;
+}
+
+.admin-sidebar-content ul li a i {
+    margin-right: 6px;
+}
+
+.admin-sidebar-content  {
+    padding: 30px 0 0 30px;
+    color: whitesmoke;
+}
+
+.admin-sidebar-content ul li {
+    padding: 6px;
+    transition: var(--main-transition);
+}
+
+.admin-sidebar-content ul > li:hover {
+    background-color: black;
+}
+
+.sub-menu {
+    height: 0;
+    overflow: hidden;
+    transition: var(--main-transition);
+}
+
+.sub-menu li:hover {
+    color: var(--color-hover-text); 
+}
+
+/* admin content */
+.admin-content {
+    background-color: var(--sub-bg-color);
+}
+
+.admin-content-top {
+    display: flex;
+    justify-content: space-between;
+    height: var(--top-height);
+    border-bottom: 1px solid gray;
+    padding: 0 16px;
+}
+
+.admin-content-top .flex-box {
+    height: 70px;
+    align-items: center;
+}
+
+.admin-content-top i {
+    margin-right: 12px;
+}
+
+.admin-content-top-right ul li p:last-child {
+    cursor: pointer;
+}
+
+.admin-content-top-right ul li:first-child i{
+    position: relative;
+}
+
+.admin-content-top-right ul li:first-child i::after {
+    position: absolute;
+    content: attr(number);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    background-color: rgb(89, 151, 233);
+    border-radius: 50%;
+    top: -12px;
+    right: -12px;
+    color: whitesmoke;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    animation: notification 2s infinite;
+}
+
+.admin-content-top-right ul li:nth-child(2) i {
+    position: relative;
+}
+
+.admin-content-top-right ul li:nth-child(2) i::after {
+    position: absolute;
+    content: attr(number);
+    height: 20px;
+    width: 20px;
+    display: flex;
+    background-color: rgb(202, 67, 34);
+    border-radius: 50%;
+    top: -12px;
+    right: -12px;
+    color: whitesmoke;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    animation: notification 2s infinite;
+}
+
+/* tao animation */
+@keyframes notification {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.admin-content-main-title h1 {
+    padding: 12px;
+    font-weight: 500;
+    position: relative; 
+}
+
+.admin-content-main-title h1::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 4px;
+    width: 70px;
+    background-color: var(--main-bg-color);
+    bottom: 6px;
+    left: 12px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.admin-content-main-title h1::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 3px;
+    background-color: wheat;
+    top: 18px;
+    left: 6px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
