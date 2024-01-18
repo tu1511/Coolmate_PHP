@@ -11,11 +11,11 @@
         <input type="text" placeholder="Giá bán" />
         <input type="text" placeholder="Giá giảm" />
       </div>
-      <textarea class="editor_des" name="" id="">
-Đặc điểm nổi bật</textarea
+      <textarea class="editor_des" name="" placeholder="Đặc điểm nổi bật" id="">
+</textarea
       >
-      <textarea class="editor_content" name="" id="">
-Mô tả sản phẩm</textarea
+      <textarea class="editor_content" name="Mô tả sản phẩm" placeholder="" id="">
+</textarea
       ><br />
       <button class="main-btn">Thêm Sản Phẩm</button>
     </div>

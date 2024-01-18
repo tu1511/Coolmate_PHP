@@ -11,7 +11,7 @@
                 <li class="flex-box">
                   <img
                     style="width: 50px"
-                    src="asset/images/minacode.png"
+                    src="{{asset('backend/asset/images/minacode.png')}}"
                     alt=""
                   />
                   <p>Mina<i class="ri-arrow-down-s-fill"></i></p>

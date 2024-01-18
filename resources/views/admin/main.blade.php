@@ -7,12 +7,7 @@
     <section class="admin">
       <div class="row-grid">
         <div class="admin-sidebar">
-          <div class="admin-sidebar-top">
-            <img src="asset/images/minacode.png" alt="" />
-          </div>
-          <div class="admin-sidebar-content">
-            @include('admin.parts.sidebar')
-          </div>
+          @include('admin.parts.sidebar')
         </div>
         <!-- admin-content -->
         <div class="admin-content">
