@@ -44,12 +44,12 @@
       <ul class="sub-menu">
         <div class="sub-menu-items">
           <li>
-            <a href="/admin/product_list"
+            <a href="/admin/product/list"
               ><i class="ri-arrow-right-s-fill"></i>Danh sách</a
             >
           </li>
           <li>
-            <a href="/admin/product_add"><i class="ri-arrow-right-s-fill"></i>Thêm</a>
+            <a href="/admin/product/create"><i class="ri-arrow-right-s-fill"></i>Thêm</a>
           </li>
         </div>
       </ul>

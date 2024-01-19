@@ -15,19 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// admin
 Route::get('/admin', function () {
     return view('admin.home');
 });
-
+// product
 Route::post('/admin/product/add', [productController::class, 'insert_product']);
-
-Route::get('/admin/product_add', function () {
-    return view('admin.product_add');
-});
-
-Route::get('/admin/product_list', function () {
-    return view('admin.product_list');
-});
+Route::get('/admin/product/create', [productController::class, 'add_product']);
+Route::get('/admin/product/list', [productController::class,'list_product']);
 
 Route::get('/admin/order_detail', function () {
     return view('admin.order_detail');
