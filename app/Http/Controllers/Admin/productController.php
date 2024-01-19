@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class productController extends Controller
 {
@@ -28,12 +29,14 @@ class productController extends Controller
         $product_images = implode('*', $request->input('images'));
         $product -> images = $product_images;
         $product -> save();
+        return redirect()->back();
     }
 
     
     public function list_product(Request $request) {
-        $product = product::all();
-
+        // $product = product::skip(3)->take(3)->get(); hien thi anh tu skip voi so luong take
+        // $product = product::all();\
+        $product = DB::table('products') -> paginate(5);
         return view('admin.product.list', [
             'title' => 'Danh sách sản phẩm',
             'products' => $product
