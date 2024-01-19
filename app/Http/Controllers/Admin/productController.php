@@ -36,7 +36,7 @@ class productController extends Controller
     public function list_product(Request $request) {
         // $product = product::skip(3)->take(3)->get(); hien thi anh tu skip voi so luong take
         // $product = product::all();\
-        $product = DB::table('products') -> paginate(5);
+        $product = DB::table('products') -> paginate(10);
         return view('admin.product.list', [
             'title' => 'Danh sách sản phẩm',
             'products' => $product
