@@ -14,11 +14,6 @@ class productController extends Controller
         ]);
     }
 
-    public function list_product(Request $request) {
-        return view('admin.product.list', [
-            'title' => 'Danh sách sản phẩm'
-        ]);
-    }
     // lay du lieu
     public function insert_product(Request $request) {
         $product = new product();
@@ -33,5 +28,15 @@ class productController extends Controller
         $product_images = implode('*', $request->input('images'));
         $product -> images = $product_images;
         $product -> save();
+    }
+
+    
+    public function list_product(Request $request) {
+        $product = product::all();
+
+        return view('admin.product.list', [
+            'title' => 'Danh sách sản phẩm',
+            'products' => $product
+        ]);
     }
 }

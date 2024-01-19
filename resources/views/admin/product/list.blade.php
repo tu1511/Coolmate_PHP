@@ -15,60 +15,27 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>
-          <img
-            style="width: 70px"
-            src="{{asset('backend/asset/images/image1.jpg')}}"
-            alt=""
-          />
-        </td>
-        <td>Áo Nỉ chui đầu Essentials</td>
-        <td>399,000</td>
-        <td>299,000</td>
-        <td>202-10-27</td>
-        <td>
-          <a class="edit-class" href="">Sửa</a>
-          |<a class="delete-class" href="">Xóa</a>
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>
-          <img
-            style="width: 70px"
-            src="{{asset('backend/asset/images/image2.jpg')}}"
-            alt=""
-          />
-        </td>
-        <td>Áo Hoodie Essential</td>
-        <td>499,000</td>
-        <td>399,000</td>
-        <td>202-10-27</td>
-        <td>
-          <a class="edit-class" href="">Sửa</a>
-          |<a class="delete-class" href="">Xóa</a>
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>
-          <img
-            style="width: 70px"
-            src="{{asset('backend/asset/images/image3.jpg')}}"
-            alt=""
-          />
-        </td>
-        <td>Áo Giữ Nhiệt Modal Ultra</td>
-        <td>289,000</td>
-        <td>199,000</td>
-        <td>202-10-27</td>
-        <td>
-          <a class="edit-class" href="">Sửa</a>
-          |<a class="delete-class" href="">Xóa</a>
-        </td>
-      </tr>
+      @foreach ($products as $product)
+           <tr>
+            <td>{{$product -> id}}</td>
+            <td>
+              <img
+                style="width: 70px"
+                src="{{asset($product -> image)}}"
+                alt=""
+              />
+            </td>
+            <td>{{$product -> name}}</td>
+            <td>{{number_format($product -> price_nomal)}}</td>
+            <td>{{number_format($product -> price_sale)}}</td>
+            <td>{{$product -> created_at}}</td>
+            <td>
+              <a class="edit-class" href="">Sửa</a>
+              |<a class="delete-class" href="">Xóa</a>
+            </td>
+        </tr>
+      @endforeach
+     
     </tbody>
   </table>
 </div>
