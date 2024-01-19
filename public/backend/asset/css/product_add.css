@@ -73,7 +73,7 @@
 }
 
 .admin-content-main-content-left {
-    max-height: 890px;
+    max-height: 750px;
     overflow: scroll;
 }
 
@@ -125,4 +125,9 @@
 }
 #input-file-img img {
     width: 70px;
+}
+
+#input-file-imgs img {
+    width: 70px;
+    padding-right: 10px;
 }
