@@ -16,8 +16,8 @@ return new class extends Migration
             // them du lieu cho module product o frontend
             $table->string('name') -> nullable();
             $table->string('material') -> nullable();
-            $table->string('price-nomal') -> nullable();
-            $table->string('price-sale') -> nullable();
+            $table->string('price_nomal') -> nullable();
+            $table->string('price_sale') -> nullable();
             $table->longText('description') -> nullable();
             $table->longText('content') -> nullable();
             $table->string('image') -> nullable();
