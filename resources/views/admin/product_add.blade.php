@@ -23,7 +23,10 @@
       <div class="admin-content-main-content-right-image">
         <label for="file">Ảnh Đại Diện</label>
         <input id="file" type="file" />
-        <div class="image-show"></div>
+        <input type="hidden" name="image" id="input-file-img-hiden">
+        <div class="image-show" id="input-file-img">
+
+        </div>
       </div>
       <div class="admin-content-main-content-right-images">
         <label for="files">Ảnh Sản Phẩm</label>
@@ -37,6 +40,7 @@
 @section('footer')
     <script src="{{asset('backend/asset/ckeditor5_col/script.js')}}"></script>
     <script src="{{asset('backend/asset/ckeditor5_col/ckeditor.js')}}"></script>
+    <script src="{{asset('backend/asset/js/product_ajax.js')}}"></script>
 
     <script>
         ClassicEditor

@@ -1,5 +1,7 @@
-@extends('admin.main')
+{{-- extends lấy giao diện của thằng nó nối đến --}}
+@extends('admin.main') 
 
+{{-- section thêm thành phần vào vị trí đặt yield --}}
 @section('content')
 <div class="admin-content-main-content-order-list">
     <table>

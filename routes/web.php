@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\uploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,8 @@ Route::get('/admin/order_detail', function () {
 Route::get('/admin/order_list', function () {
     return view('admin.order_list');
 });
+
+Route::post('/upload', [uploadController::class,'uploadImage']);
 
 Route::get('/', function () {
     return view('welcome');

@@ -118,3 +118,11 @@
 .admin-content-main-content-order-list table td {
     padding: 6px 0;
 }
+
+/* Bo sung khi lam backend */
+#input-file-img {
+    padding: 12px 0;
+}
+#input-file-img img {
+    width: 70px;
+}

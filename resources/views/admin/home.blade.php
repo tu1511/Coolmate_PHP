@@ -12,6 +12,7 @@
         <!-- admin-content -->
         <div class="admin-content">
           <div class="admin-content-top">
+            {{-- nối giao diện với file php khác chứa thành phần liên quan --}}
             @include('admin.parts.header')
           </div>
           <!-- dashboard -->

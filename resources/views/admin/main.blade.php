@@ -22,6 +22,7 @@
             <div class="admin-content-main-content">
                 <!-- Code o day -->
                 @yield('content')
+                {{-- yield cho phép chèn dữ liệu vào trong 1 thành phần --}}
             </div>
           </div>
         </div>
