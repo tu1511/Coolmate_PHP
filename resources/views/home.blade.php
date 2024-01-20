@@ -40,8 +40,8 @@
         <div class="row-grid row-grid-hot-products">
           @foreach ($products as $product)           
             <div class="hot-product-item">
-              <a href=""><img src="{{asset($product -> image)}}" alt="" /></a>
-              <p><a href="">{{($product -> name)}}</a></p>
+              <a href="/product/{{$product -> id}}"><img src="{{asset($product -> image)}}" alt="" /></a>
+              <p><a href="/product/{{$product -> id}}">{{($product -> name)}}</a></p>
               <span>{{($product -> material)}}</span>
               <div class="product-item-price">
                 <p>

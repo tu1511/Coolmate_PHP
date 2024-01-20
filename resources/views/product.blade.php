@@ -6,17 +6,18 @@
       <div class="row-flex row-flex-product-detail">
         <p>Sản Phẩm</p>
         <i class="ri-arrow-right-line"></i>
-        <p>Áo Nỉ chui đầu Essentials</p>
+        <p>{{$product -> name}}</p>
       </div>
       <div class="row-grid">
         <div class="product-detail-left">
-          <img class="main-image" src="{{asset('frontend/asset/images/image1.jpg')}}" alt="" />
+          <img class="main-image" src="{{asset($product->image)}}" alt="" />
           <div class="product-images-items">
-            <img src="{{asset('frontend/asset/images/image1.jpg')}}" alt="" />
-            <img src="{{asset('frontend/asset/images/image1.2.jpg')}}" alt="" />
-            <img src="{{asset('frontend/asset/images/image1.3.jpg')}}" alt="" />
-            <img src="{{asset('frontend/asset/images/image1.4.jpg')}}" alt="" />
-            <img src="{{asset('frontend/asset/images/image1.5.jpg')}}" alt="" />
+            @php
+                $product_images = explode('*', $product->images)
+            @endphp
+            @foreach ($product_images as $product_image)
+               <img src="{{asset($product_image)}}" alt="" />
+            @endforeach
           </div>
         </div>
         <div class="product-detail-right">

@@ -13,4 +13,13 @@ class FrontEndController extends Controller
             'products' => $products
         ]);
     }
+
+    public function show_product(Request $request) {
+        // lay du lieu ra
+        $product = product::find($request->id);
+        return view('product', [
+            'product' => $product,
+            'title' => 'Coolmate_Product-detail'
+        ]);
+    }
 }
