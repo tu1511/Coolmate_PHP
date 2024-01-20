@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --header-height: 70px;
+    --main-bg: #e8e8e8;
+    --main-color: white;
+    --main-transition: all 0.3s ease;
+    --main-font:  "Open Sans", sans-serif;
+    --main-font-weight: 500;
+    --main-border-radius: 8px;
+}
+
+.cart-section .row-grid {
+    grid-template-columns: 60% 40%;
+    column-gap: 30px;
+}
+
+.cart-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-section table,th,td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 6px;
+}
+
+.cart-section table thead {
+    background-color: var(--main-bg);
+}
+
+.cart-section table thead th {
+    font-weight: var(--main-font-weight);
+}
+/* lay td thu 2 cua tbody */
+.cart-section table tbody tr td:nth-child(2) {
+    text-align: left;
+}
+
+.cart-section table tbody tr td:nth-child(2) h1 {
+    font-size: small;
+}
+.cart-section table tbody tr td:nth-child(2) .product-item-price {
+    font-size: small;
+}
+
+.cart-section table tbody tr td:nth-child(2) .product-detail-right-quantity-input {
+    margin-top: 12px;
+}
+
+.cart-section table tbody tr td:last-child {
+    cursor: pointer;
+}
+
+.cart-section table tbody tr td:last-child:hover {
+    color: red;
+}
+
+/* form */
+.cart-section-right input {
+    height: 35px;
+    border: none;
+    background-color: var(--main-bg);
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-radius: var(--main-border-radius);
+}
+
+.cart-section-right select {
+    height: 35px;
+    border: none;
+    background-color: var(--main-bg);
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-radius: var(--main-border-radius);       
+    width: 30%;
+}
+
+.cart-section-right-select {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.cart-section-right-input-name-phone {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-section-right-input-name-phone input {
+    width: 49%;
+}
+
+.cart-section-right-input-email input {
+    width: 100%;
+}
+
+.cart-section-right-input-address input {
+    width: 100%;
+}
+
+.cart-section-right-input-note input {
+    width: 100%;
+}
+
+/* responsive cart detail*/
+@media only screen and (max-width: 756px) {
+    .cart-section .row-grid {
+        grid-template-columns: 100%;
+        row-gap: 30px;
+    }
+}

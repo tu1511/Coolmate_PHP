@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --header-height: 70px;
+    --main-bg: #e8e8e8;
+    --main-color: white;
+    --main-transition: all 0.3s ease;
+    --main-font:  "Open Sans", sans-serif;
+    --main-font-weight: 500;
+    --main-border-radius: 8px;
+}
+
+.order-confirm-content {
+    padding: 20px 12px;
+    background-color: var(--main-bg);
+    border-radius: var(--main-border-radius);
+    margin-top: 30px;
+    width: 100%;
+}
