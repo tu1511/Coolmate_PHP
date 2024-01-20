@@ -6,6 +6,7 @@ $.ajaxSetup({
 
 // product_add
 $('#file').on('change',()=>{
+    // check file
     var formData = new FormData();
     var file = $('#file')[0].files[0]
     formData.append('file',file)

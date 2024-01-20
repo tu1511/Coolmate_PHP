@@ -36,10 +36,9 @@ Route::get('/admin/order_detail', function () {
 Route::get('/admin/order_list', function () {
     return view('admin.order_list');
 });
-
+// upload
 Route::post('/upload', [uploadController::class,'uploadImage']);
 Route::post('/uploads', [uploadController::class,'uploadImages']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// frontend
+Route::get('/', function () {return view('home');});

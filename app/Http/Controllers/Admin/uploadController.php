@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 class uploadController extends Controller
 {
     public function uploadImage(Request $request) {
+        // check file
         $fileName =time().'-'.$_FILES['file']['name'];
         $request -> file('file')-> storeAs('public/images',$fileName);
         $url = '/storage/images/'.$fileName;
-        return response() -> json([
+        return response() -> json([ 
             'success' => true,
             'path' => $url
         ]);
