@@ -30,8 +30,12 @@
           <input id="files" type="file" multiple>
           <div class="images-show" id="input-file-imgs">
                 @php
-                    $product_images = explode("*",string,$product -> images);
+                    $product_images = explode("*",$product -> images);
                 @endphp
+
+                @foreach ($product_images as $product_image)
+                    <img src="{{asset($product_image)}}" alt="">
+                @endforeach
           </div>
         </div>
       </div>
