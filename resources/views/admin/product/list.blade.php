@@ -30,7 +30,7 @@
             <td>{{number_format($product -> price_sale)}}</td>
             <td>{{$product -> created_at}}</td>
             <td>
-              <a class="edit-class" href="">Sửa</a>
+              <a href="/admin/product/edit/{{$product -> id}}" class="edit-class" href="">Sửa</a>
               |
               <a onclick="removeRow(product_id= {{$product -> id}},url='/admin/product/delete')" class="delete-class" href="#">Xóa</a>
             </td>

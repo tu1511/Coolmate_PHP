@@ -50,4 +50,12 @@ class productController extends Controller
             'success'=>true
         ]);
     }
+
+    public function edit_product (Request $request) {
+        $product = product::find($request->id);
+        return view('admin.product.edit', [
+            'title'=> 'Sửa sản phẩm',
+            'product'=> $product
+        ]);
+    }
 }
