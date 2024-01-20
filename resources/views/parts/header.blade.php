@@ -7,7 +7,8 @@
           </div>
           <!-- logo -->
           <div class="header-logo">
-            <img src="{{asset('frontend/asset/images/logo.png')}}" alt="" />
+            <a href="/"><img src="{{asset('frontend/asset/images/logo.png')}}" alt="" /></a>
+            
           </div>
           <div class="header-logo-mobile">
             <img src="{{asset('frontend/asset/images/logoMobile.png')}}g" alt="" />

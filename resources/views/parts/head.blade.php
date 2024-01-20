@@ -5,4 +5,7 @@
   rel="stylesheet"
 />
 <link rel="stylesheet" href="{{asset('frontend/asset/css/style.css')}}" />
+<link rel="stylesheet" href="{{asset('frontend/asset/css/product.css')}}" />
+<link rel="stylesheet" href="{{asset('frontend/asset/css/cart.css')}}" />
+<link rel="stylesheet" href="{{asset('frontend/asset/css/order-confirm.css')}}" />
 <title>Coolmate</title>

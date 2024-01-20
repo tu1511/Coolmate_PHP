@@ -6,33 +6,12 @@
   <body>
     {{-- header --}}
     @include('parts.header')
-    <!-- slider -->
-    <section class="slider">
-      <div class="slider-items">
-        <div class="slider-item">
-          <img
-            src="{{asset('frontend/asset/images/BANNER_WINTER_CLT_(ccmfnlfnal)s.png')}}"
-            alt=""
-          />
-        </div>
-        <div class="slider-item">
-          <img
-            src="{{asset('frontend/asset/images/Banner_Homepage_option_2_copy.jpg')}}"
-            alt=""
-          />
-        </div>
-        <div class="slider-item">
-          <img src="{{asset('frontend/asset/images/cmbsBanner-6_copy.jpg')}}" alt="" />
-        </div>
-      </div>
-
-      <div class="slider-arrow">
-        <i class="ri-arrow-right-fill"></i>
-        <i class="ri-arrow-left-fill"></i>
-      </div>
-    </section>
+    
+    {{--  content --}}
+    @yield('content')
+   
     <!-- hot product -->
-      @include('parts.hot_product')
+    @include('parts.hot_product')
     <!-- popular product -->
     {{-- <section class="hot-products">
       <div class="container">
@@ -97,7 +76,6 @@
         </div>
       </div>
     </section> --}}
-
     <!-- footer -->
     @include('parts.footer')
   </body>
