@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 @section('content')
-<form action="/admin/product/add" enctype="multipart/form-data" method="post"> 
+<form action="" enctype="multipart/form-data" method="post"> 
   <div class="admin-content-main-content-product-add">
       <div class="admin-content-main-content-left">
         <div class="admin-content-main-content-two-input">
@@ -20,7 +20,7 @@
         <div class="admin-content-main-content-right-image">
           <label for="file">Ảnh Đại Diện</label>
           <input id="file" type="file">
-          <input type="hidden" name="image" id="input-file-img-hiden">
+          <input type="hidden" name="image" value="{{asset($product -> image)}}" id="input-file-img-hiden">
           <div class="image-show" id="input-file-img">
                 <img src="{{asset($product -> image)}}" alt="">
           </div>
@@ -35,6 +35,7 @@
 
                 @foreach ($product_images as $product_image)
                     <img src="{{asset($product_image)}}" alt="">
+                    <input type="hidden" name="images[]" value="{{asset($product_image)}}" id="input-file-img-hiden">
                 @endforeach
           </div>
         </div>
