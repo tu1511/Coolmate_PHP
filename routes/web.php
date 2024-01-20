@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\uploadController;
+use App\Http\Controllers\FrontEndController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,7 +42,7 @@ Route::post('/upload', [uploadController::class,'uploadImage']);
 Route::post('/uploads', [uploadController::class,'uploadImages']);
 
 // frontend
-Route::get('/', function () {return view('home');});
+Route::get('/', [FrontEndController::class,'index']);
 Route::get('/product', function () {return view('product');});
 Route::get('/cart', function () {return view('cart');});
 Route::get('/order/confirm', function () {return view('order.confirm');});
