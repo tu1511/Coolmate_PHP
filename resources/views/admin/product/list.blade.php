@@ -32,7 +32,7 @@
             <td>
               <a class="edit-class" href="">Sửa</a>
               |
-              <a class="delete-class" href="">Xóa</a>
+              <a onclick="removeRow(product_id= {{$product -> id}},url='product_delete.php')" class="delete-class" href="#">Xóa</a>
             </td>
         </tr>
       @endforeach
@@ -40,4 +40,24 @@
     </tbody>
   </table>
 </div>
+@endsection
+
+@section('footer')
+    <script>
+      // delete
+      function removeRow(product_id,url){
+          if(confirm('Are You Sure')){
+              $.ajax({
+              url: url,
+              data: {product_id},
+              method: 'GET',
+              dataType:'JSON',
+              success: function (res){
+                console.log(res)
+              }
+              }
+            )
+         }
+      }
+    </script>
 @endsection

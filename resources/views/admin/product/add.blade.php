@@ -10,7 +10,7 @@
         </div>
         <div class="admin-content-main-content-two-input">
           <input type="text" value="{{old('price_nomal')}}" name="price_nomal" placeholder="Giá bán" />
-          <input type="text" value="{{old('price_sale')}} " name="price_sale" placeholder="Giá giảm" />
+          <input type="text" value="{{old('price_sale')}}" name="price_sale" placeholder="Giá giảm" />
         </div>
         <textarea class="editor_des" value="{{old('description')}}" name="description" placeholder="Đặc điểm nổi bật" id=""></textarea>
         <textarea class="editor_content" value="{{old('content')}}" name="content" placeholder="Mô tả sản phẩm" id=""></textarea><br />
