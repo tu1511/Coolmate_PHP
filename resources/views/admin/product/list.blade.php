@@ -32,7 +32,7 @@
             <td>
               <a class="edit-class" href="">Sửa</a>
               |
-              <a onclick="removeRow(product_id= {{$product -> id}},url='product_delete.php')" class="delete-class" href="#">Xóa</a>
+              <a onclick="removeRow(product_id= {{$product -> id}},url='/admin/product/delete')" class="delete-class" href="#">Xóa</a>
             </td>
         </tr>
       @endforeach
@@ -43,18 +43,20 @@
 @endsection
 
 @section('footer')
+    {{-- delete product --}}
     <script>
-      // delete
       function removeRow(product_id,url){
-          if(confirm('Are You Sure')){
+          if(confirm('Bạn có chắc chắn muốn xóa Sản phẩm này không?')){
               $.ajax({
-              url: url,
-              data: {product_id},
-              method: 'GET',
-              dataType:'JSON',
-              success: function (res){
-                console.log(res)
-              }
+                url: url,
+                data: {product_id},
+                method: 'GET',
+                dataType:'JSON',
+                success: function (res){
+                  if (res.success == true) {
+                    location.reload();
+                  }
+                }
               }
             )
          }

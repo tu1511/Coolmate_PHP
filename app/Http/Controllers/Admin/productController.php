@@ -42,4 +42,12 @@ class productController extends Controller
             'products' => $product
         ]);
     }
+
+
+    public function delete_product (Request $request) {
+        product::find($request->product_id)->delete();
+        return response()->json([
+            'success'=>true
+        ]);
+    }
 }

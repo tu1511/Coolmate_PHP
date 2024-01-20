@@ -23,6 +23,7 @@ Route::get('/admin', function () {
 Route::post('/admin/product/add', [productController::class, 'insert_product']);
 Route::get('/admin/product/create', [productController::class, 'add_product']);
 Route::get('/admin/product/list', [productController::class,'list_product']);
+Route::get('/admin/product/delete', [productController::class,'delete_product']);
 
 Route::get('/admin/order_detail', function () {
     return view('admin.order_detail');
