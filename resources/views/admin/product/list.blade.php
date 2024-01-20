@@ -31,7 +31,8 @@
             <td>{{$product -> created_at}}</td>
             <td>
               <a class="edit-class" href="">Sửa</a>
-              |<a class="delete-class" href="">Xóa</a>
+              |
+              <a class="delete-class" href="">Xóa</a>
             </td>
         </tr>
       @endforeach
