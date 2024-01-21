@@ -131,3 +131,11 @@
     width: 70px;
     padding-right: 10px;
 }
+
+.ck-editor__main ul {
+    padding: 20px;
+}
+
+.ck-editor__main li {
+    list-style: unset;
+}

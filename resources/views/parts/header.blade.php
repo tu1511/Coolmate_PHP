@@ -11,7 +11,7 @@
             
           </div>
           <div class="header-logo-mobile">
-            <img src="{{asset('frontend/asset/images/logoMobile.png')}}g" alt="" />
+            <img src="{{asset('frontend/asset/images/logoMobile.png')}}" alt="" />
           </div>
           <!-- navbar -->
           <div class="header-nav">
