@@ -5,6 +5,10 @@
       <div class="container">
         <div class="row-flex row-flex-product-detail">
           <p>Giỏ Hàng</p>
+          @php
+              // Session::flush('cart');
+              var_dump(Session::get('cart'));
+          @endphp
         </div>
         <div class="row-grid">
           <div class="cart-section-left">
