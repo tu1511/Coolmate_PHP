@@ -69,4 +69,10 @@ class FrontEndController extends Controller
         Session::put('cart', $cart);
         return redirect('/cart');
     }
+
+    public function update_cart(Request $request) {
+        $cart = $request->product_id;
+        Session::put('cart', $cart);
+        return redirect('/cart');
+    }
 }
