@@ -77,24 +77,28 @@ for (let index = 0; index < imageSmall.length; index++) {
 }
 
 // quantity-product
-const quanPlus = document.querySelector('.ri-add-line');
-const quanMinus = document.querySelector('.ri-subtract-line');
-const quanInput = document.querySelector('.quantity-input');
-let quantity = 1;
+const quanPlus = document.querySelectorAll('.ri-add-line');
+const quanMinus = document.querySelectorAll('.ri-subtract-line');
+const quanInput = document.querySelectorAll('.quantity-input');
+// let quantity = 1;
 
 if (quanMinus != null && quanPlus != null) {
-    quanPlus.addEventListener('click', ()=> {
-        inputValue =
-        quantity++;
-        quanInput.value = quantity;
-    })
-    
-    quanMinus.addEventListener('click', ()=> {
-        if (quantity <= 1){
-            return false;
-        } else {
-            quantity--;
-        quanInput.value = quantity;
-        }
-    })
+
+    for (let index = 0; index < quanPlus.length; index++) {   
+        quanPlus[index].addEventListener('click', ()=> {
+            inputValue = quanInput[index].value
+            inputValue++;
+            quanInput[index].value = inputValue;
+        })
+
+        quanMinus[index].addEventListener('click', ()=> {
+            inputValue = quanInput[index].value
+            if (inputValue <= 1){
+                return false;
+            } else {
+                inputValue--;
+                quanInput[index].value = inputValue;
+            }
+        })
+    }
 }

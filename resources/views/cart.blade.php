@@ -52,7 +52,9 @@
                       <td>
                         <p>{{number_format($price)}}<sup>đ</sup></p>
                       </td>
-                      <td>Xóa</td>
+                      <td>
+                        <a href="/cart/delete/{{$product->id}}"><i class="ri-close-line"></i></a>
+                      </td>
                     </tr>
                   @endforeach
                     <tr>

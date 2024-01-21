@@ -50,3 +50,4 @@ Route::get('/order/success', function () {return view('order.success');});
 
 // cart
 Route::post('/cart/add', [FrontEndController::class,'add_cart']);
+Route::get('/cart/delete/{id}', [FrontEndController::class,'delete_cart']);

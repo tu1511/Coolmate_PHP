@@ -61,4 +61,12 @@ class FrontEndController extends Controller
             'title' => 'Coolmate-Cart'
         ]);
     }
+
+    public function delete_cart(Request $request) {
+        $cart = Session::get('cart');
+        $product_id = $request -> id;
+        unset($cart[$product_id]);
+        Session::put('cart', $cart);
+        return redirect('/cart');
+    }
 }
