@@ -24,74 +24,42 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <img
-                        style="width: 70px"
-                        src="{{asset('frontend/asset/images/image1.jpg')}}"
-                        alt=""
-                      />
-                    </td>
-                    <td>
-                      <div class="product-detail-right-infor">
-                        <h1>Áo Nỉ chui đầu Essentials</h1>
-                        <div class="product-item-price">
-                          <p>
-                            299,000 <sup>đ</sup>
-                            <span>399,000 <sup>đ</sup></span>
-                          </p>
+                  @php
+                      $total = 0;
+                  @endphp
+                  @foreach ($products as $product)            
+                    @php
+                        $price = $product->price_sale * Session::get('cart')[$product->id];
+                        $total += $price;
+                    @endphp         
+                    <tr>
+                      <td>
+                        <img  style="width: 70px"  src="{{asset($product -> image)}}" alt="" />
+                      </td>
+                      <td>
+                        <div class="product-detail-right-infor">
+                          <h1>{{$product->name}}</h1>
+                          <div class="product-item-price">
+                            <p>{{number_format($product->price_sale)}}<sup>đ</sup><span>{{number_format($product->price_nomal)}}<sup>đ</sup></span></p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="product-detail-right-quantity-input">
-                        <i class="ri-subtract-line"></i>
-                        <input
-                          class="quantity-input"
-                          onKeyDown="return false"
-                          type="number"
-                          value="1"
-                        />
-                        <i class="ri-add-line"></i>
-                      </div>
-                    </td>
-                    <td>
-                      <p>299,000 <sup>đ</sup></p>
-                    </td>
-                    <td>Xóa</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img
-                        style="width: 70px"
-                        src="{{asset('frontend/asset/images/image2.jpg')}}"
-                        alt=""
-                      />
-                    </td>
-                    <td>
-                      <div class="product-detail-right-infor">
-                        <h1>Áo Hoodie Essential</h1>
-                        <div class="product-item-price">
-                          <p>
-                            399,000 <sup>đ</sup>
-                            <span>499,000 <sup>đ</sup></span>
-                          </p>
+                        <div class="product-detail-right-quantity-input">
+                          <i class="ri-subtract-line"></i>
+                          <input class="quantity-input" onKeyDown="return false" type="number"  value="{{Session::get('cart')[$product->id]}}"/>
+                          <i class="ri-add-line"></i>
                         </div>
-                      </div>
-                      <div class="product-detail-right-quantity-input">
-                        <i class="ri-subtract-line"></i>
-                        <input
-                          class="quantity-input"
-                          onKeyDown="return false"
-                          type="number"
-                          value="1"
-                        />
-                        <i class="ri-add-line"></i>
-                      </div>
-                    </td>
-                    <td>
-                      <p>399,000 <sup>đ</sup></p>
-                    </td>
-                    <td>Xóa</td>
-                  </tr>
+                      </td>
+                      <td>
+                        <p>{{number_format($price)}}<sup>đ</sup></p>
+                      </td>
+                      <td>Xóa</td>
+                    </tr>
+                  @endforeach
+                    <tr>
+                      <td style="font-weight: bold" colspan="2">Tổng tiền</td>
+                      <td style="font-weight: bold; text-align: center">{{number_format($total)}}<sup>đ</sup></td>
+                      <td></td>
+                    </tr>
                 </tbody>
               </table>
               <br />

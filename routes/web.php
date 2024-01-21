@@ -44,7 +44,7 @@ Route::post('/uploads', [uploadController::class,'uploadImages']);
 // frontend
 Route::get('/', [FrontEndController::class,'index']);
 Route::get('/product/{id}', [FrontEndController::class,'show_product']);
-Route::get('/cart', function () {return view('cart');});
+Route::get('/cart', [FrontEndController::class,'show_cart']);
 Route::get('/order/confirm', function () {return view('order.confirm');});
 Route::get('/order/success', function () {return view('order.success');});
 

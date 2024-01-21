@@ -50,4 +50,15 @@ class FrontEndController extends Controller
             }
         }
     }
+
+    public function show_cart() {
+        $cart = Session::get('cart');
+        $product_id = array_keys($cart);
+        $products = product::whereIn('id', $product_id)->get();
+
+        return view('cart', [
+            'products'=> $products,
+            'title' => 'Coolmate-Cart'
+        ]);
+    }
 }
