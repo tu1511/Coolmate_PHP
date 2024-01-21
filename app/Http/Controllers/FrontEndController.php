@@ -75,4 +75,8 @@ class FrontEndController extends Controller
         Session::put('cart', $cart);
         return redirect('/cart');
     }
+
+    public function send_cart(Request $request) {
+        dd($request->all());
+    }
 }

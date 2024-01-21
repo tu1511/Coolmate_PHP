@@ -44,11 +44,12 @@ Route::post('/uploads', [uploadController::class,'uploadImages']);
 // frontend
 Route::get('/', [FrontEndController::class,'index']);
 Route::get('/product/{id}', [FrontEndController::class,'show_product']);
-Route::get('/cart', [FrontEndController::class,'show_cart']);
 Route::get('/order/confirm', function () {return view('order.confirm');});
 Route::get('/order/success', function () {return view('order.success');});
 
 // cart
 Route::post('/cart/add', [FrontEndController::class,'add_cart']);
+Route::get('/cart', [FrontEndController::class,'show_cart']);
 Route::get('/cart/delete/{id}', [FrontEndController::class,'delete_cart']);
 Route::post('/cart/update', [FrontEndController::class,'update_cart']);
+Route::post('/cart/send', [FrontEndController::class,'send_cart']);
