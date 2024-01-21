@@ -80,10 +80,8 @@ for (let index = 0; index < imageSmall.length; index++) {
 const quanPlus = document.querySelectorAll('.ri-add-line');
 const quanMinus = document.querySelectorAll('.ri-subtract-line');
 const quanInput = document.querySelectorAll('.quantity-input');
-// let quantity = 1;
 
 if (quanMinus != null && quanPlus != null) {
-
     for (let index = 0; index < quanPlus.length; index++) {   
         quanPlus[index].addEventListener('click', ()=> {
             inputValue = quanInput[index].value
