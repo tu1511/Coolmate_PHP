@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Mail\TestMail;
 use App\Models\order;
 use App\Models\product;
+use App\Notifications\EmailNotification;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -97,10 +99,11 @@ class FrontEndController extends Controller
         $order -> order_detail = $order_detail;
         $order -> token = $token;
         $order->save();
-
+        Session::flush('cart');
         $mailInfor = $order -> email;
         $nameInfor = $order -> name;
         $Mail = Mail::to($mailInfor) -> send(new TestMail($nameInfor));
+        Notification::send($order, new EmailNotification($order));
         return redirect('/order/confirm');
     }
 }
