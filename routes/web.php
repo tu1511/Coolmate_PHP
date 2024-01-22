@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\orderController;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\uploadController;
 use App\Http\Controllers\FrontEndController;
@@ -30,11 +31,9 @@ Route::post('/admin/product/edit/{id}', [productController::class,'update_produc
 
 
 // order
-Route::get('/admin/order_detail', [productController::class,'']);
+Route::get('/admin/order/detail/{order_detail}',[orderController::class,'detail_order']);
+Route::get('/admin/order/list', [orderController::class,'list_order']);
 
-Route::get('/admin/order_list', function () {
-    return view('admin.order_list');
-});
 // upload
 Route::post('/upload', [uploadController::class,'uploadImage']);
 Route::post('/uploads', [uploadController::class,'uploadImages']);
