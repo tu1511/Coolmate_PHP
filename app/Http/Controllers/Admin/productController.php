@@ -69,7 +69,7 @@ class productController extends Controller
         $product -> content = $request->input('content');
         $product -> image = $request->input('image');
         // chuyen mang thanh chuoi
-        $product_images = implode('*', $request->input('images'));
+        $product_images = implode('*',$request->input('images'));
         $product -> images = $product_images;
         $product -> save();
         return redirect('/admin/product/list');

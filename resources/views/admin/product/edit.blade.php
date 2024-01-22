@@ -35,7 +35,7 @@
 
                 @foreach ($product_images as $product_image)
                     <img src="{{asset($product_image)}}" alt="">
-                    <input type="hidden" name="images[]" value="{{asset($product_image)}}" id="input-file-img-hiden">
+                    <input type="hidden" name="images[]" value="{{($product_image)}}" id="input-file-img-hiden">
                 @endforeach
           </div>
         </div>

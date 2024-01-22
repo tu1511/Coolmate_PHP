@@ -29,10 +29,8 @@ Route::get('/admin/product/edit/{id}', [productController::class,'edit_product']
 Route::post('/admin/product/edit/{id}', [productController::class,'update_product']);
 
 
-
-Route::get('/admin/order_detail', function () {
-    return view('admin.order_detail');
-});
+// order
+Route::get('/admin/order_detail', [productController::class,'']);
 
 Route::get('/admin/order_list', function () {
     return view('admin.order_list');

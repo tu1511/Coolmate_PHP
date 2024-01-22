@@ -78,13 +78,13 @@
                   <input type="email" placeholder="Email" name="email" id="" />
                 </div>
                 <div class="cart-section-right-select">
-                  <select name="" id="city">
+                  <select name="city" id="city">
                     <option value="">Tỉnh/Tp</option>
                   </select>
-                  <select name="" id="district">
+                  <select name="district" id="district">
                     <option value="">Quận/Huyện</option>
                   </select>
-                  <select name="" id="ward">
+                  <select name="ward" id="ward">
                     <option value="">Phường/Xã</option>
                   </select>
                 </div>
