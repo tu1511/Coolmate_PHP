@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestMail;
 use App\Models\order;
 use App\Models\product;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class FrontEndController extends Controller
@@ -79,6 +81,7 @@ class FrontEndController extends Controller
     }
 
     public function send_cart(Request $request) {
+
         $token = Str::random(12);
         $order = new order();
         $order -> name = $request -> input('name');
@@ -92,8 +95,12 @@ class FrontEndController extends Controller
 
         $order_detail = json_encode($request -> input('product_id'));
         $order -> order_detail = $order_detail;
-        $order -> token = $request -> $token;
+        $order -> token = $token;
         $order->save();
-        return redirect('/order/success');
+
+        $mailInfor = $order -> email;
+        $nameInfor = $order -> name;
+        $Mail = Mail::to($mailInfor) -> send(new TestMail($nameInfor));
+        return redirect('/order/confirm');
     }
 }
