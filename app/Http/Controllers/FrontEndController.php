@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
@@ -105,5 +106,18 @@ class FrontEndController extends Controller
         $Mail = Mail::to($mailInfor) -> send(new TestMail($nameInfor));
         Notification::send($order, new EmailNotification($order));
         return redirect('/order/confirm');
+    }
+
+    public function show_login() {
+        return view('login');
+    }
+
+    public function check_login(Request $request) {
+        if (Auth::attempt([
+            'email'=> $request -> input('email'), 'password' => $request -> input('password')
+        ])) {
+            return redirect('admin'); 
+        }
+       return redirect()->back();
     }
 }
