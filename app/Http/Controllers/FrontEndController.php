@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrderRequest;
 use App\Mail\TestMail;
 use App\Models\order;
 use App\Models\product;
@@ -83,8 +84,7 @@ class FrontEndController extends Controller
         return redirect('/cart');
     }
 
-    public function send_cart(Request $request) {
-
+    public function send_cart(OrderRequest $request) {
         $token = Str::random(12);
         $order = new order();
         $order -> name = $request -> input('name');

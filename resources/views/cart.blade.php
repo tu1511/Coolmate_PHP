@@ -70,6 +70,17 @@
               <div class="cart-section-right">
                 {{-- form information --}}
                 <h2 class="main-h2">Thông tin Giao hàng</h2>
+                <span style="color: red">
+                    @if (count($errors) > 0 )                       
+                      <div class="alert alert-danger">
+                        <ul>
+                          @foreach ($errors->all() as $error)
+                              <li>{{$error}}</li>
+                          @endforeach
+                        </ul>
+                      </div>
+                    @endif
+                </span>
                 <div class="cart-section-right-input-name-phone">
                   <input type="text" placeholder="Tên" name="name" id="" />
                   <input type="text" placeholder="Điện thoại" name="phone" id="" />
