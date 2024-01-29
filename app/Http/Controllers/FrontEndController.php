@@ -95,7 +95,7 @@ class FrontEndController extends Controller
         $order -> ward = $request -> input('ward');
         $order -> address = $request -> input('address');
         $order -> note = $request -> input('note');
-
+        // chuyen data ve string
         $order_detail = json_encode($request -> input('product_id'));
         $order -> order_detail = $order_detail;
         $order -> token = $token;
