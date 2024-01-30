@@ -101,7 +101,11 @@ class FrontEndController extends Controller
         $order -> token = $token;
         $order->save();
         Session::flush('cart');
-      
+        $mailInfor = $order -> email;
+        $nameInfor = $order -> name;
+        $Mail = Mail::to($mailInfor) -> send(new TestMail($nameInfor));
+        Notification::send($order, new EmailNotification($order));
+        return redirect('/order/confirm');
     }
 
     public function show_login() {
